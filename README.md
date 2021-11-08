@@ -7,4 +7,4 @@ This is my portfolio created with React.js. It contains an About page, Portfolio
 ![webpage screenshot](./src/assets/images/Anamika-readme-screenshot.png)
 
 ## Application Link
-https://github.com/anamika0212/react-portfolio
+https://anamika0212.github.io/react-portfolio/
