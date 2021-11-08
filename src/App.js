@@ -1,33 +1,44 @@
-import React, { useState } from 'react';
-import Nav from "./components/Nav";
+import "./App.css";
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import About from "./components/About";
-import Gallery from "./components/Gallery";
+import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
+import Resume from "./components/Resume";
 
 function App() {
-  const [categories] = useState([
-    { name: "About Me",description:"About Me"},
-    { name: "Portfolio",description:"My Portfolio"},
-    { name: "Contact", description: "My Contact" },
-    { name: "Resume", description: "My Resume" },
-  ]);
+	const [currentTab, setCurrentTab] = useState("about");
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+	// This function checks to see which tab is selected and then generates the appropriate tab.
+	const renderTab = () => {
+		switch (currentTab) {
+			case "about":
+				return <About />;
+			case "portfolio":
+				return <Portfolio />;
+			case "contact":
+				return <Contact />;
+			case "resume":
+				return <Resume />;
+			default:
+				return null;
+		}
+	};
 
-  return (
-    <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-      ></Nav>
-      <main>
-        <div>
-          <Gallery></Gallery>
-          <About></About>
-        </div>
-      </main>
-    </div>
-  );
+	return (
+		<div>
+			<div className="mobile-header">
+				<Header currentTab={currentTab} setCurrentTab={setCurrentTab}></Header>
+			</div>
+			<div>
+				<main>{renderTab()}</main>
+			</div>
+			<div>
+				<Footer></Footer>
+			</div>
+		</div>
+	);
 }
 
 export default App;
