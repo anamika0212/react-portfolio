@@ -68,6 +68,23 @@ function Portfolio() {
 			],
 			github: 'https://github.com/anamika0212/note-taker',
 			deployed: 'https://note-taker-anamika.herokuapp.com/',
+		},
+
+		{
+			name: 'Task Manager',
+			description:
+				'This app helps to create tasks and stay organized and informed about your tasks.',
+			image: 'taskmanager.png',
+			technologies: [
+				'HTML/CSS',
+				'JavaScript',
+				'Node.js',
+				'Express',
+				'Heroku',
+				'uuid'
+			],
+			github: 'https://github.com/anamika0212/taskmaster3.0',
+			deployed: 'https://taskmaster3dot0.herokuapp.com/',
 		}
       
 	];
@@ -92,6 +109,9 @@ function Portfolio() {
 					</li>
 					<li className="padding">
 						<Project projects={projects[3]}></Project>
+					</li>
+					<li className="padding">
+						<Project projects={projects[4]}></Project>
 					</li>
 				</ul>
 			</div>
